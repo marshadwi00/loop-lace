@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Order Form</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-bar">
+      <a class="brand" href="index.html">LOOP &amp; LACE</a>
+      <input type="checkbox" id="menu-toggle" class="menu-check">
+      <label for="menu-toggle" class="menu-btn">Menu</label>
+      <nav class="nav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li class="has-dropdown">
+            <details>
+              <summary>About</summary>
+              <ul class="dropdown">
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="visi-misi.html">Visi &amp; Misi</a></li>
+                <li><a href="tujuan.html">Tujuan</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="registration.html" class="active">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+      <h1 class="page-title">Customer Order Form</h1>
+      <section class="panel">
+        <p>Terima kasih sudah tertarik dengan koleksi LOOP & LACE. Silakan isi formulir berikut untuk menyampaikan pesananmu.</p>
+        <form action="mailto:info@sonicwave.id" method="post" enctype="text/plain">
+          <label>Nama lengkap <input type="text" name="nama" required></label>
+          <label>Email <input type="email" name="email" required></label>
+          <label>Nomor telepon <input type="tel" name="telepon" required></label>
+          <label>Alamat pengiriman <input type="tel" name="telepon" required></label>
+          <label>Kategori Produk
+            <select name="produk" required>
+              <option value="">Pilih produk</option>
+              <option>Daily essentials</option>
+              <option>Knitwear edit</option>
+              <option>Secondhand gems</option>
+            </select>
+          </label>
+          <label>Jumlah produk<input type="number" name="jumlah" min="1" max="10" value="1" required></label>
+          <button class="btn" type="submit">Kirim pesanan</button>
+        </form>
+      </section>
+    </main>
+    <aside>
+      <div class="widget">
+        <h3>Waktu Sekarang</h3>
+        <div class="clock-time" id="clock">00:00:00</div>
+        <div class="clock-date" id="date"></div>
+      </div>
+      <div class="widget">
+        <h3>Payment Information</h3>
+       <div class="widget">
+    <h3>Payment Method</h3>
+    <p>Scan QRIS untuk pembayaran.</p>
+    <img src="images/qris.png" alt="QRIS LOOP & LACE" class="qris-image">
+</div>
+      </div>
+    </aside>
+  </div>
+  <footer class="site-footer">
+    <p>&copy; 2026 LOOP & LACE. All rights reserved.</p>
+    <p>Clothes Worth Keeping.</p>
+    <p>Desain by Marsha Dwi</p>
+  </footer>
+  <script src="script.js?v=12"></script>
+</body>
+</html>

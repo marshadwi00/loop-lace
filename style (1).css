@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* Pengaturan dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F8F3EC;
+    color: #49382E;
+    font: 16px/1.7 "DM Sans", sans-serif;
+}
+
+a {
+    color: #98715F;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    line-height: 1.2;
+    color: #49382E;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    max-width: 68ch;
+    margin-bottom: 0.8rem;
+    color: #76665B;
+    text-align: justify;
+}
+
+:focus-visible {
+    outline: 3px solid #C58F91;
+    outline-offset: 3px;
+}
+
+/* Bagian navigasi */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(248, 243, 236, 0.96);
+    border-bottom: 1px solid #E8DCCF;
+    backdrop-filter: blur(12px);
+}
+
+.header-bar {
+    max-width: 1180px;
+    margin: auto;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font: 700 1.65rem "Playfair Display", Georgia, serif;
+    color: #604637;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: #C58F91;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav li {
+    position: relative;
+}
+
+.nav a,
+.nav summary {
+    display: block;
+    cursor: pointer;
+    list-style: none;
+    padding: 0.55rem 1rem;
+    border-radius: 30px;
+    color: #604C40;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav a:hover,
+.nav summary:hover {
+    background: #EDE1D5;
+    color: #8A6252;
+}
+
+.nav summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav summary::after {
+    content: " \25BE";
+}
+
+.nav a.active,
+.nav summary.active {
+    background: #DCC1B5;
+    color: #49382E;
+}
+
+.dropdown {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 190px;
+    background: #FFFDF9;
+    border: 1px solid #E8DCCF;
+    border-radius: 14px;
+    padding: 0.5rem;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(73, 56, 46, 0.12);
+}
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
+    height: 8px;
+}
+
+.dropdown a {
+    border-radius: 9px;
+}
+
+.menu-check {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    background: #80604F;
+    color: white;
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Banner utama */
+.hero-full {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 4rem 1.2rem;
+    background: linear-gradient(
+        115deg,
+        #E9D9C9,
+        #F5E9DD 55%,
+        #E6CBC5
+    );
+    border-bottom: 1px solid #E8DCCF;
+}
+
+.hero-inner {
+    max-width: 1180px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-full h1 {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 700;
+    max-width: 12ch;
+    color: #503B30;
+}
+
+.hero-full p {
+    font-size: 1.1rem;
+    color: #685346;
+    margin: 1.2rem 0 1.6rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.chips span {
+    border: 1px solid #B99586;
+    color: #705547;
+    border-radius: 30px;
+    padding: 0.35rem 1rem;
+    font-size: 0.9rem;
+    background: rgba(255, 253, 249, 0.45);
+}
+
+.actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+/* Dekorasi banner */
+.eq {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    height: 130px;
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    opacity: 0.4;
+}
+
+.eq i {
+    width: 12px;
+    height: 40%;
+    border-radius: 10px 10px 0 0;
+    background: #A77C68;
+    animation: softMove 2s ease-in-out infinite alternate;
+}
+
+.eq i:nth-child(2n) {
+    animation-delay: 0.4s;
+}
+
+.eq i:nth-child(3n) {
+    animation-delay: 0.8s;
+}
+
+@keyframes softMove {
+    from {
+        height: 25%;
+    }
+    to {
+        height: 80%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .eq i {
+        animation: none;
+        height: 45%;
+    }
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    background: #80604F;
+    color: #FFFDF9;
+    border: 0;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    font: 600 0.95rem "DM Sans", sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #604637;
+    transform: translateY(-2px);
+}
+
+.btn.ghost {
+    background: transparent;
+    color: #604637;
+    border: 1px solid #A98B7B;
+}
+
+.btn.ghost:hover {
+    background: #E9D9C9;
+}
+
+.btn.small {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.85rem;
+}
+
+/* Susunan halaman */
+.layout {
+    max-width: 1180px;
+    margin: auto;
+    padding: 3rem 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    gap: 2.5rem;
+}
+
+aside {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.page-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: 1.4rem;
+}
+
+main > section {
+    margin-bottom: 3.5rem;
+}
+
+.panel {
+    background: #FFFDF9;
+    border: 1px solid #E8DCCF;
+    border-radius: 18px;
+    padding: 1.8rem;
+}
+
+/* Kategori produk */
+.tickets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.2rem;
+}
+
+.ticket {
+    background: #F0E5D9;
+    border-radius: 14px;
+    border: 1px solid #E6D6C8;
+    border-top: 4px solid #B88D78;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ticket:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(73, 56, 46, 0.1);
+}
+
+.ticket:nth-child(2) {
+    border-top-color: #C58F91;
+}
+
+.ticket:nth-child(3) {
+    border-top-color: #A98B73;
+}
+
+.ticket p {
+    flex: 1;
+}
+
+.ticket .price {
+    margin-top: 0.6rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed #CDB7A7;
+    font: 600 1rem "DM Sans", sans-serif;
+    color: #916D5A;
+}
+
+/* Informasi toko */
+.news {
+    list-style: none;
+}
+
+.news li {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #E8DCCF;
+    color: #76665B;
+}
+
+.news b {
+    color: #604637;
+}
+
+.date {
+    flex: none;
+    width: 62px;
+    text-align: center;
+    background: #EDE1D5;
+    border-radius: 12px;
+    padding: 0.6rem 0;
+    font: 700 1.4rem "Playfair Display", Georgia, serif;
+    color: #604637;
+}
+
+.date small {
+    display: block;
+    font: 500 0.75rem "DM Sans", sans-serif;
+    color: #B47D7D;
+    margin-top: 0.2rem;
+}
+
+/* Artikel */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.2rem;
+    align-items: start;
+}
+
+.article {
+    background: #FFFDF9;
+    border: 1px solid #E8DCCF;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.article:hover {
+    transform: translateY(-3px);
+}
+
+.article .body {
+    padding: 1.2rem;
+}
+
+.cover {
+    height: 145px;
+    background: linear-gradient(135deg, #DCC1B5, #B99586);
+}
+
+.article:nth-child(2) .cover {
+    background: linear-gradient(135deg, #E9D9C9, #C58F91);
+}
+
+.article:nth-child(3) .cover {
+    background: linear-gradient(135deg, #C5A58E, #80604F);
+}
+
+.article summary {
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+}
+
+.article summary::-webkit-details-marker {
+    display: none;
+}
+
+.article details p {
+    margin-top: 0.8rem;
+}
+
+/* Galeri */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Formulir */
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 560px;
+}
+
+label {
+    display: grid;
+    gap: 0.3rem;
+    font-weight: 500;
+    color: #604637;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    background: #FFFDF9;
+    color: #49382E;
+    border: 1px solid #DCCBBE;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #B99586;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.notice {
+    display: none;
+    background: #E5EFE2;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    color: #456348;
+}
+
+.notice.show {
+    display: block;
+}
+
+.contact-list {
+    list-style: none;
+    margin-bottom: 1.6rem;
+}
+
+.contact-list li {
+    padding: 0.35rem 0;
+    color: #76665B;
+}
+
+/* Sidebar */
+.widget {
+    background: #FFFDF9;
+    border: 1px solid #E8DCCF;
+    border-radius: 16px;
+    padding: 1.3rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 5px 15px rgba(73, 56, 46, 0.04);
+}
+
+.widget h3 {
+    margin-bottom: 0.8rem;
+}
+
+.clock-time {
+    font: 600 2.5rem "Playfair Display", Georgia, serif;
+    color: #98715F;
+}
+
+.clock-date {
+    color: #89766A;
+    font-size: 0.9rem;
+}
+
+.video {
+    aspect-ratio: 16 / 9;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* Footer */
+.site-footer {
+    background: #604637;
+    text-align:center;
+    padding: 2rem 1rem;
+    color: #F8F3EC;
+    font-size: 0.92rem;
+}
+
+.site-footer p {
+    margin: 0.2rem auto;
+    color: #E8DCCF;
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 850px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    aside {
+        position: static;
+    }
+
+    .hero-full {
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 700px) {
+    .header-bar {
+        gap: 0.8rem;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+    }
+
+    .menu-check:checked ~ .nav {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+        padding-top: 0.8rem;
+    }
+
+    .nav a,
+    .nav summary {
+        border-radius: 10px;
+    }
+
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        margin: 0.3rem 0 0.5rem 1rem;
+        width: calc(100% - 1rem);
+    }
+
+    .hero-full {
+        min-height: 420px;
+        padding: 3rem 1.2rem;
+    }
+
+    .hero-full h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .eq {
+        height: 80px;
+        right: 0;
+    }
+
+    .layout {
+        padding: 2rem 1rem;
+    }
+
+    main > section {
+        margin-bottom: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand {
+        font-size: 1.35rem;
+    }
+
+    .tickets,
+    .articles {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-full p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.2rem;
+    }
+     .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.hero-photo {
+    width: 300px;
+    margin: 25px auto;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.widget img.qris-image {
+    display: block;
+    width: 200px;
+    height: 250px;
+    max-width: none;
+    object-fit:contain;
+    margin: 15px auto;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.site-footer {
+    width: 100%;
+    text-align: center !important;
+}
+
+.site-footer p {
+    width: 100%;
+    max-width: none;
+    text-align: center !important;
+    margin: 0.2rem auto !important;
+}
+.widget video.style-video {
+    display: block;
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 10px auto;
+}
